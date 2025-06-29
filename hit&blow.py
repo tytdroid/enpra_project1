@@ -1,8 +1,8 @@
 import random
 
-limit=2#回数制限
-
+limit=10#回数制限
 answer = []#答えの設定
+
 while len(answer) < 3:
     x = random.randint(1, 9)
     if x not in answer:
@@ -14,7 +14,6 @@ for i in range(limit):
     hit = sum([int(your_answer[i]) == answer[i] for i in range(3)])#結果＆ヒント
     blow = sum([int(g) in answer for g in your_answer]) - hit
     print(f"{hit} Hit, {blow} Blow")
-    print(answer,your_answer)
 
     if your_answer == ''.join(map(str, answer)):
         print("Correct!")
